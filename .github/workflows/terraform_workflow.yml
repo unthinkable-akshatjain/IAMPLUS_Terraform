@@ -7,11 +7,11 @@ on:
 defaults:
   run:
     shell: bash
+    working-directory: ./system_integration_testing/me-south-1/
 jobs:
   terraform:
-    name: 'Terrgrunt Initialization, Validation and Apply'
+    name: 'Terragrunt Initialization, Validation and Apply'
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' || github.event_name != 'pull_request'
 
     env:
          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
