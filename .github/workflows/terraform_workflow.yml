@@ -39,7 +39,7 @@ jobs:
            rm -rf .terragrunt
            ls
            pwd
-           terragrunt init -upgrade=true -no-color -input=false
+           terragrunt init -upgrade=true -no-color -input=false -auto-approve
 
       - name: Terragrunt Format
         id: fmt
