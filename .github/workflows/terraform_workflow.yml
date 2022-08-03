@@ -19,7 +19,7 @@ jobs:
     env:
          AWS_ACCESS_KEY_ID: AKIAQ7NUSICQGR4WLZ5Z
          AWS_SECRET_ACCESS_KEY: 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
-         #AWS_DEFAULT_REGION: ap-south-1
+         AWS_DEFAULT_REGION: ap-south-1
 
     steps:
       - name: Checkout
@@ -39,7 +39,7 @@ jobs:
            rm -rf .terragrunt
            ls
            pwd
-           terragrunt init -upgrade=true -no-color -input=false -auto-approve
+           terragrunt init -upgrade=true -no-color -input=false -y
 
       - name: Terragrunt Format
         id: fmt
