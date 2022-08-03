@@ -43,7 +43,7 @@ jobs:
            ls
            pwd
            terraform init
-           terragrunt init
+           #terragrunt init
 
       - name: Terragrunt Format
         id: fmt
