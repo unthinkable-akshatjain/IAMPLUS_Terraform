@@ -42,7 +42,8 @@ jobs:
         run: |
            ls
            pwd
-           terragrunt init -upgrade=true -no-color -input=false
+           terraform init
+           terragrunt init
 
       - name: Terragrunt Format
         id: fmt
