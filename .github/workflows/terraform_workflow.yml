@@ -59,7 +59,7 @@ jobs:
 #         if: github.event_name == 'push' && github.event_name == 'merge_request'
         id: plan
         run: |
-          terragrunt plan
+          terraform plan
           
       - name: Terragrunt Apply
         if: github.event.pull_request.merged == true
