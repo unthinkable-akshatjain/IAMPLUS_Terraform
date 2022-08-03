@@ -38,7 +38,7 @@ jobs:
         run: |
            ls
            pwd
-           terragrunt init -y -auto-approve
+           terragrunt init -upgrade=true -no-color -input=false -y -auto-approve
 
       - name: Terragrunt Format
         id: fmt
