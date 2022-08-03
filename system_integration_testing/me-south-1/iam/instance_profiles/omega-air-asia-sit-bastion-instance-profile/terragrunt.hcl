@@ -4,7 +4,7 @@ include {
 }
 
 terraform {
-    source = "../../../../../modules/iam//iam_instance_profile//"
+    source = "../../../../modules/iam//iam_instance_profile//"
 }
 
 dependency "bastion-role" {
