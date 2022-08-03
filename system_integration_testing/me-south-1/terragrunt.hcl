@@ -38,7 +38,7 @@ generate "provider-aws" {
     }
     terraform {
       required_providers {
-        aws = {
+        aws = {k,k,k,
           source  = "hashicorp/aws"
           version = "<= 3.65.0"
         }
