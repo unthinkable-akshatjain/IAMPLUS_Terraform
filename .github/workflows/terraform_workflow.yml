@@ -50,10 +50,10 @@ jobs:
 #         run: |
 #            terragrunt run-all fmt
 
-      - name: Terragrunt Validate
-        id: validate
-        run: |
-           terragrunt run-all validate
+#       - name: Terragrunt Validate
+#         id: validate
+#         run: |
+#            terragrunt run-all validate
 
       - name: Terragrunt Plan
         if: github.event_name == 'push' && github.event_name == 'merge_request'
