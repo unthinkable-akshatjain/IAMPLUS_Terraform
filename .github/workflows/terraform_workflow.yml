@@ -7,7 +7,7 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: ./system_integration_testing/me-south-1/
+    #working-directory: ./system_integration_testing/me-south-1/
 jobs:
   terraform:
 
