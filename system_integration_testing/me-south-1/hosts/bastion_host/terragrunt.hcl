@@ -4,7 +4,7 @@ include {
 }
 
 terraform{
-    source = "../../../../modules//bastion_host//"
+    source = "../../../modules//bastion_host//"
 }
 
 dependency "vpc" {
