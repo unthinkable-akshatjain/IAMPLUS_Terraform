@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-         AWS_ACCESS_KEY_ID: AKIAQ7NUSICQD6QYRIX4
-         AWS_SECRET_ACCESS_KEY: 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
+         AWS_ACCESS_KEY_ID: AKIAQ7NUSICQGR4WLZ5Z
+         AWS_SECRET_ACCESS_KEY: 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
          #AWS_DEFAULT_REGION: ap-south-1
 
     steps:
