@@ -45,10 +45,10 @@ jobs:
            terraform init
            #terragrunt init
 
-      - name: Terragrunt Format
-        id: fmt
-        run: |
-           terragrunt run-all fmt
+#       - name: Terragrunt Format
+#         id: fmt
+#         run: |
+#            terragrunt run-all fmt
 
       - name: Terragrunt Validate
         id: validate
