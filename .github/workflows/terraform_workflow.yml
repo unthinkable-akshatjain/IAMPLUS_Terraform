@@ -7,6 +7,7 @@ on:
 defaults:
   run:
     shell: bash
+    working-directory: ./system_integration_testing/me-south-1/
 jobs:
   terraform:
 
@@ -19,17 +20,16 @@ jobs:
          AWS_DEFAULT_REGION: ap-south-1
 
     steps:
-      - name: Terragrunt installation
-        run:
-           curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-           brew install terragrunt
-            
       - name: Checkout
         uses: actions/checkout@v2   #checkout@v2
       
-      - uses: hashicorp/setup-terraform@v1
+      - name: Setup Terragrunt
+        uses: autero1/action-terragrunt@v1.1.0
         with:
-          terraform_wrapper: true
+          terragrunt_version: 0.21.13
+          
+      - name: Interact with Terragrunt
+        run: terragrunt --version
 
       - name: Terragrunt Init
         id: init
