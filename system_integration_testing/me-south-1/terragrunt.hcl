@@ -14,8 +14,8 @@ remote_state {
 }
 
 locals {
-    aws_region = "ap-southeast-1"
-    aws_region_dr = "eu-west-1"
+    aws_region = "ap-south-1"
+    #aws_region_dr = "eu-west-1"
     env = "sit"
     env_dr = "sit-dr"
     platform = "omega"
