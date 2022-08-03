@@ -7,7 +7,6 @@ on:
 defaults:
   run:
     shell: bash
-    #working-directory: ./system_integration_testing/me-south-1/
 jobs:
   terraform:
 
@@ -21,7 +20,7 @@ jobs:
 
     steps:
       - name: Terragrunt installation
-        run: |
+        run:
            curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
            brew install terragrunt
             
