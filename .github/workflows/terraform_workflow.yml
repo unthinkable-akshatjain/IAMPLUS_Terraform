@@ -37,6 +37,8 @@ jobs:
         id: init
         run: |
            rm -rf .terragrunt
+           ls
+           pwd
            terragrunt init -upgrade=true -no-color -input=false
 
       - name: Terragrunt Format
