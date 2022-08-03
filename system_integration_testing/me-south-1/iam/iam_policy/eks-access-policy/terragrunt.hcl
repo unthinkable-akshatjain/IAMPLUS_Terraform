@@ -4,7 +4,7 @@ include {
 }
 
 terraform {
-    source = "../../../../../modules/iam//iam_policy//"
+    source = "../../../../modules/iam//iam_policy//"
 }
 
 locals {
