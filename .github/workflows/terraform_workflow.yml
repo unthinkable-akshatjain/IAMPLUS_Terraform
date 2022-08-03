@@ -20,11 +20,11 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@SIT   #checkout@v2
+        uses: actions/checkout@v2   #checkout@v2
       
       - uses: hashicorp/setup-terraform@v1
         with:
-          terraform_wrapper: false
+          terraform_wrapper: true
 
       - name: Terragrunt Init
         id: init
