@@ -42,7 +42,7 @@ jobs:
         run: |
            ls
            pwd
-           #terraform init
+           terraform init
            terragrunt init
 
       - name: Terragrunt Format
