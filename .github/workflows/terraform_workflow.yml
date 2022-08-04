@@ -42,21 +42,20 @@ jobs:
         run: |
            ls
            pwd
-           terraform init
-           #terragrunt init
+           terragrunt init
 
-#       - name: Terragrunt Format
-#         id: fmt
-#         run: |
-#            terragrunt run-all fmt
+      - name: Terragrunt Format
+        id: fmt
+        run: |
+           terragrunt run-all fmt
 
-#       - name: Terragrunt Validate
-#         id: validate
-#         run: |
-#            terragrunt run-all validate
+      - name: Terragrunt Validate
+        id: validate
+        run: |
+           terragrunt run-all validate
 
       - name: Terragrunt Plan
-#         if: github.event_name == 'push' && github.event_name == 'merge_request'
+        if: github.event_name == 'push' && github.event_name == 'merge_request'
         id: plan
         run: |
           terraform plan
@@ -67,10 +66,10 @@ jobs:
         run: |
            terraform run-all apply -auto-approve
       
-      # - name: Terraform destroy
-      #   if: github.ref == 'refs/heads/main'
-      #   run: |
-      #      terraform destroy -auto-approve
+      - name: Terraform destroy
+        if: github.ref == 'refs/heads/main'
+        run: |
+           terraform destroy -auto-approve
   
   comment:
     runs-on: ubuntu-latest
