@@ -21,7 +21,7 @@ locals {
     platform = "omega"
     host = "air-asia"
     tf_state_bucket = "terraform-backend-test-456"
-    tf_lock_table = "${local.prefix}-terraform-backend-lock"
+    tf_lock_table = "terraform-backend-lock"
     prefix = "${local.platform}-${local.host}-${local.env}"
     tags = {
         "Environment" = "staging"
