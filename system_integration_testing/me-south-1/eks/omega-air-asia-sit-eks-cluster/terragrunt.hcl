@@ -29,7 +29,7 @@ dependency "node_group_volume_key" {
 
 locals {
     resource = "eks-cluster"
-    aws_id = "681257129225"
+    aws_id = "067487547552"
     public_cidrs = ["14.141.28.114/32", "157.175.10.116/32"]
 
     users = [ 
