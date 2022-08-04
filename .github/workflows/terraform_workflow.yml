@@ -42,12 +42,12 @@ jobs:
         run: |
            ls
            pwd
-           terragrunt init | echo "y"
+           terragrunt init -input=false
 
       - name: Terragrunt Format
         id: fmt
         run: |
-           terragrunt run-all fmt
+           terragrunt run-all -input=false
 
       - name: Terragrunt Validate
         id: validate
