@@ -42,7 +42,7 @@ jobs:
         run: |
            ls
            pwd
-           terragrunt init
+           terragrunt init | echo "y"
 
       - name: Terragrunt Format
         id: fmt
