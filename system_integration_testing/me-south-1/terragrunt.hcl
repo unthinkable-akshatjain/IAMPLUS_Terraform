@@ -20,7 +20,7 @@ locals {
     env_dr = "sit-dr"
     platform = "omega"
     host = "air-asia"
-    tf_state_bucket = "terraform-backend-test"
+    tf_state_bucket = "terraform-backend-test-test"
     tf_lock_table = "terraform-backend-lock"
     prefix = "${local.platform}-${local.host}-${local.env}"
     tags = {
