@@ -24,7 +24,7 @@ inputs = {
             "Sid": "Enable IAM User Permissions",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::681257129225:root"
+                "AWS": "arn:aws:iam::067487547552:root"
             },
             "Action": "kms:*",
             "Resource": "*"
@@ -34,7 +34,7 @@ inputs = {
             "Effect": "Allow",
             "Principal": {
                 "AWS": [
-                    "arn:aws:iam::681257129225:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling"
+                    "arn:aws:iam::067487547552:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling"
                 ]
             },
             "Action": [
@@ -51,7 +51,7 @@ inputs = {
             "Effect": "Allow",
             "Principal": {
                 "AWS": [
-                    "arn:aws:iam::681257129225:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling"
+                    "arn:aws:iam::067487547552:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling"
                 ]
             },
             "Action": [
