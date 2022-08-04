@@ -18,9 +18,9 @@ locals {
     #aws_region_dr = "eu-west-1"
     env = "sit"
     env_dr = "sit-dr"
-    platform = "omega"
+    platform = "akshat"
     host = "air-asia"
-    tf_state_bucket = "terraform-backend-test-test"
+    tf_state_bucket = "${local.prefix}-terraform-backend-test-test"
     tf_lock_table = "terraform-backend-lock"
     prefix = "${local.platform}-${local.host}-${local.env}"
     tags = {
