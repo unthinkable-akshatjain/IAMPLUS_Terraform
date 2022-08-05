@@ -20,7 +20,7 @@ locals {
     env_dr = "sit-dr"
     platform = "akshat"
     host = "air-asia"
-    tf_state_bucket = "${local.prefix}-terraform-backend-test-test"
+    tf_state_bucket = "${local.prefix}-terraform-backend-state"
     tf_lock_table = "terraform-backend-lock"
     prefix = "${local.platform}-${local.host}-${local.env}"
     tags = {
