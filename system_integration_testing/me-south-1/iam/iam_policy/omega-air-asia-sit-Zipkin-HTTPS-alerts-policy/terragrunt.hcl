@@ -14,7 +14,7 @@ locals {
   "Statement": [{
     "Effect": "Allow",
     "Action": "sns:Publish",
-    "Resource": "arn:aws:sns:me-south-1:681257129225:omega-air-asia-sit-Zipkin-HTTPS-alerts"
+    "Resource": "arn:aws:sns:me-south-1:067487547552:omega-air-asia-sit-Zipkin-HTTPS-alerts"
   }]
 }
 EOF
