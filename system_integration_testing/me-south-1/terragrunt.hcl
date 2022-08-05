@@ -5,6 +5,7 @@ remote_state {
         key = "${local.aws_region}/${path_relative_to_include()}/terraform.tfstate"
         region = "${local.aws_region}"
         encrypt = true
+        skip_bucket_root_access = true
         dynamodb_table = "${local.tf_lock_table}"
     }
     generate = {
