@@ -3,6 +3,7 @@ remote_state {
     config = {
         bucket = "${local.tf_state_bucket}"
         key = "${local.aws_region}/${path_relative_to_include()}/terraform.tfstate"
+        skip_bucket_root_access = true
         region = "${local.aws_region}"
         encrypt = true
         skip_bucket_root_access = true
