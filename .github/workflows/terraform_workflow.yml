@@ -55,7 +55,7 @@ jobs:
            terragrunt validate
 
       - name: Terragrunt Plan
-        if: github.event_name == 'push' && github.event_name == 'merge_request'
+#         if: github.event_name == 'push' && github.event_name == 'merge_request'
         id: plan
         run: |
           terraform plan
