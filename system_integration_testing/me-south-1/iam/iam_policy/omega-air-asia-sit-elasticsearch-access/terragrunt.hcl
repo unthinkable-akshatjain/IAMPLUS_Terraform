@@ -15,7 +15,7 @@ locals {
         {
             "Effect": "Allow",
             "Action": "iam:PassRole",
-            "Resource": "arn:aws:iam::681257129225:role/omega-air-asia-sit-elasticsearch-put-snapshot-role"
+            "Resource": "arn:aws:iam::067487547552:role/omega-air-asia-sit-elasticsearch-put-snapshot-role"
         },
         {
             "Sid": "ESAccess",
