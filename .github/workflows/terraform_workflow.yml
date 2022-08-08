@@ -44,10 +44,10 @@ jobs:
            pwd
            terragrunt init -input=false
 
-#       - name: Terragrunt Format
-#         id: fmt
-#         run: |
-#            terragrunt run-all -input=false
+      - name: Terragrunt Format
+        id: fmt
+        run: |
+           terragrunt run-all -input=false
 
       - name: Terragrunt Validate
         id: validate
