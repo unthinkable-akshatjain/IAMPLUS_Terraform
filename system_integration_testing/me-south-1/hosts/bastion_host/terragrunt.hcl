@@ -25,7 +25,7 @@ locals {
   ami_owners = ["amazon"]
   ami_name = ["amzn2-ami-hvm-2.0.20220426.0-x86_64-gp2"]
   volume_size = 30
-  instance_type = "t3.medium"
+  instance_type = "t2.micro"
   ingress_sg = local.all_include.locals.ingress
   egress_sg = local.all_include.locals.egress
 }
