@@ -52,7 +52,7 @@ jobs:
       - name: Terragrunt Validate
         id: validate
         run: |
-           terragrunt run-all validate
+           terragrunt validate
 
       - name: Terragrunt Plan
 #         if: github.event_name == 'push' && github.event_name == 'merge_request'
