@@ -47,7 +47,7 @@ jobs:
       - name: Terragrunt Format
         id: fmt
         run: |
-           terragrunt run-all -input=false
+           terragrunt run-all fmt
 
       - name: Terragrunt Validate
         id: validate
