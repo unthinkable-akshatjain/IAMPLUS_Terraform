@@ -11,8 +11,8 @@ defaults:
     working-directory: ./system_integration_testing/me-south-1/
 
 jobs:
-  if_merged:
-    if: github.event.pull_request == true
+#   if_merged:
+#     if: github.event.pull_request == true
     name: 'Terragrunt Formatting and Validation'  
     runs-on: ubuntu-latest
 
