@@ -3,7 +3,7 @@ on:
   # Manual trigger
   workflow_dispatch:
   push:
-    branches: [ SIT ]
+    branches: [ SIT, master ]
     
 defaults:
   run:
