@@ -13,7 +13,7 @@ defaults:
 jobs:
   terraform:
 
-    name: 'Terragrunt Initialization, Validation and Apply'
+    name: 'Terragrunt Initialization'
     runs-on: ubuntu-latest
 
     env:
