@@ -1,0 +1,50 @@
+name: "Terraform Formatting and Validate"
+on:
+  pull_request:
+    types: [ opened , closed ]
+    branches:
+      - 'SIT/**'
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./system_integration_testing/me-south-1/
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    name: 'Terragrunt Formatting and Validation'  
+    runs-on: ubuntu-latest
+
+    env:
+         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         AWS_DEFAULT_REGION: ap-south-1
+
+    steps:
+       - name: Checkout
+        uses: actions/checkout@v2   #checkout@v2
+        
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_wrapper: true
+          
+      - name: Setup Terragrunt
+        uses: autero1/action-terragrunt@v1.1.0
+        with:
+          terragrunt_version: 0.35.14
+          
+      - name: Interact with Terragrunt
+        run: terragrunt --version
+
+      - name: Terragrunt Format
+        if: ${{ github.event_name == 'merge_request' }}
+        id: fmt
+        run: |
+           terragrunt fmt
+
+      - name: Terragrunt Validate
+        if: ${{ github.event_name == 'merge_request' }}
+        id: validate
+        run: |
+           terragrunt validate
