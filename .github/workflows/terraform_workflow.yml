@@ -3,7 +3,7 @@ on:
   # Manual trigger
   workflow_dispatch:
   push:
-    branches: [ SIT , master ]
+    branches: [ master ]
     
 defaults:
   run:
@@ -45,26 +45,26 @@ jobs:
            terragrunt init -input=false
            
       - name: Terragrunt Format
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.event_name == 'merge_request' }}
         id: fmt
         run: |
            terragrunt fmt
 
       - name: Terragrunt Validate
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.event_name == 'merge_request' }}
         id: validate
         run: |
            terragrunt validate
            
 
       - name: Terragrunt Plan
-        if: github.event_name == 'merge_request' || github.event.pull_request.merged == true  #github.event_name == 'push' || 
+        if: ${{ github.event.pull_request.merged == true }}  #github.event_name == 'push' || 
         id: plan
         run: |
           terragrunt plan
           
       - name: Terragrunt Apply
-        if: github.event.pull_request.merged == true #github.event_name == 'push' || github.event_name == 'merge_request' 
+        if: ${{ github.event.pull_request.merged == true }} #github.event_name == 'push' || github.event_name == 'merge_request' 
         id: apply
         run: |
            terraform apply
