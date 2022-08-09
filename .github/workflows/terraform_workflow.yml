@@ -43,7 +43,25 @@ jobs:
            ls
            pwd
            terragrunt init -input=false
+           
+on:
+  pull_request:
+    types:
+      - opened
+    branches: [ SIT , master ]
+    
+jobs:
+  terraform:
 
+    name: 'Terragrunt Formatting and Validation'
+    runs-on: ubuntu-latest
+
+    env:
+         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         AWS_DEFAULT_REGION: ap-south-1
+
+    steps:
       - name: Terragrunt Format
         if: github.event_name == 'pull_request'
         id: fmt
@@ -55,6 +73,7 @@ jobs:
         id: validate
         run: |
            terragrunt validate
+           
 
       - name: Terragrunt Plan
         if: github.event_name == 'merge_request' || github.event.pull_request.merged == true  #github.event_name == 'push' || 
