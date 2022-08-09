@@ -2,7 +2,7 @@ name: "Terraform Plan and Apply. "
 on:
   pull_request:
     types: [ opened , closed ]
-    branches: [ SIT ]
+    branches: [ master ]
 #       - 'SIT/**'
 
 defaults:
