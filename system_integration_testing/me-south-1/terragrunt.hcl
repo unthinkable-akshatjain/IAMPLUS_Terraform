@@ -3,8 +3,10 @@ remote_state {
     config = {
         bucket = "${local.tf_state_bucket}"
         key = "${local.aws_region}/${path_relative_to_include()}/terraform.tfstate"
+        skip_bucket_root_access = true
         region = "${local.aws_region}"
         encrypt = true
+        skip_bucket_root_access = true
         dynamodb_table = "${local.tf_lock_table}"
     }
     generate = {
@@ -14,14 +16,14 @@ remote_state {
 }
 
 locals {
-    aws_region = "ap-southeast-1"
-    aws_region_dr = "eu-west-1"
+    aws_region = "ap-south-1"
+    #aws_region_dr = "eu-west-1"
     env = "sit"
     env_dr = "sit-dr"
     platform = "omega"
     host = "air-asia"
-    tf_state_bucket = "${local.prefix}-terraform-backend-state"
-    tf_lock_table = "${local.prefix}-terraform-backend-lock"
+    tf_state_bucket = "${local.prefix}-terraform-backend-state-test-123"
+    tf_lock_table = "terraform-backend-lock"
     prefix = "${local.platform}-${local.host}-${local.env}"
     tags = {
         "Environment" = "staging"
@@ -38,7 +40,7 @@ generate "provider-aws" {
     }
     terraform {
       required_providers {
-        aws = {k,k,k,
+        aws = {
           source  = "hashicorp/aws"
           version = "<= 3.65.0"
         }

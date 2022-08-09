@@ -31,7 +31,7 @@ inputs = {
         {
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::681257129225:root"
+                "AWS": "arn:aws:iam::067487547552:root"
             },
             "Action": "sts:AssumeRole"
         }

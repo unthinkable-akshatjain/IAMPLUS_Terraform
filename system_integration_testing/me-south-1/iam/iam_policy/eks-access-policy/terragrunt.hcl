@@ -4,7 +4,7 @@ include {
 }
 
 terraform {
-    source = "../../../../modules/iam//iam_policy//"
+    source = "../../../../../modules/iam//iam_policy//"
 }
 
 locals {
@@ -18,10 +18,10 @@ locals {
             "Effect": "Allow",
             "Action": "eks:*",
             "Resource": [
-                "arn:aws:eks:*:681257129225:cluster/*",
-                "arn:aws:eks:*:681257129225:addon/*/*/*",
-                "arn:aws:eks:*:681257129225:identityproviderconfig/*/*/*/*",
-                "arn:aws:eks:*:681257129225:nodegroup/*/*/*"
+                "arn:aws:eks:*:067487547552:cluster/*",
+                "arn:aws:eks:*:067487547552:addon/*/*/*",
+                "arn:aws:eks:*:067487547552:identityproviderconfig/*/*/*/*",
+                "arn:aws:eks:*:067487547552:nodegroup/*/*/*"
             ]
         }
     ]

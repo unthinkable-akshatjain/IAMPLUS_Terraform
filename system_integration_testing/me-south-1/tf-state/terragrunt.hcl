@@ -6,7 +6,7 @@ locals {
     env_name = "sit"
     platform_name = "omega"
     host_name = "air-asia"
-    aws_region = "ap-southeast-1"
+    aws_region = "ap-south-1"
     tags = {
         "Environment" = "staging"
         "Owner" = "terraform/terragrunt"

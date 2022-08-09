@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "terraform-backend-state" {
   versioning {
     enabled = true
   }
-
+  skip_bucket_root_access = true
   tags = var.tags
 
   server_side_encryption_configuration {

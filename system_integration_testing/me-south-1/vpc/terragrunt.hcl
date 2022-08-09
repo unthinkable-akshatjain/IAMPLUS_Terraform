@@ -9,7 +9,7 @@ terraform {
 
 locals {
     cidr = "10.100.0.0/19"
-    azs = ["ap-southeast-1a", "ap-southeast-1b", "ap-southeast-1c"]
+    azs = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
 }
 
 inputs = {
