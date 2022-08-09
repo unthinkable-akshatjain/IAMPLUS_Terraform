@@ -2,8 +2,8 @@ name: "Terraform Formatting and Validate"
 on:
   pull_request:
     types: [ opened , closed ]
-    branches:
-      - 'SIT/**'
+    branches: [ master , SIT]
+#       - 'SIT/**'
 
 defaults:
   run:
@@ -23,28 +23,28 @@ jobs:
 
     steps:
        - name: Checkout
-        uses: actions/checkout@v2   #checkout@v2
+         uses: actions/checkout@v2   #checkout@v2
         
-      - uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_wrapper: true
+       - uses: hashicorp/setup-terraform@v1
+         with:
+           terraform_wrapper: true
           
-      - name: Setup Terragrunt
-        uses: autero1/action-terragrunt@v1.1.0
-        with:
-          terragrunt_version: 0.35.14
-          
-      - name: Interact with Terragrunt
-        run: terragrunt --version
+       - name: Setup Terragrunt
+         uses: autero1/action-terragrunt@v1.1.0
+         with:
+           terragrunt_version: 0.35.14
+           
+       - name: Interact with Terragrunt
+         run: terragrunt --version
 
-      - name: Terragrunt Format
-#         if: ${{ github.event_name == 'merge_request' }}
-        id: fmt
-        run: |
-           terragrunt fmt
+       - name: Terragrunt Format
+#          if: ${{ github.event_name == 'merge_request' }}
+         id: fmt
+         run: |
+            terragrunt fmt
 
-      - name: Terragrunt Validate
-#         if: ${{ github.event_name == 'merge_request' }}
-        id: validate
-        run: |
-           terragrunt validate
+       - name: Terragrunt Validate
+#          if: ${{ github.event_name == 'merge_request' }}
+         id: validate
+         run: |
+            terragrunt validate
