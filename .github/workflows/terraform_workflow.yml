@@ -45,32 +45,33 @@ jobs:
            terragrunt init -input=false
 
       - name: Terragrunt Format
+        if: github.event_name == 'pull_request'
         id: fmt
         run: |
            terragrunt fmt
 
       - name: Terragrunt Validate
+        if: github.event_name == 'pull_request'
         id: validate
         run: |
            terragrunt validate
 
       - name: Terragrunt Plan
-        if: github.event_name == 'push' || github.event_name == 'merge_request'
+        if: github.event_name == 'merge_request' || github.event.pull_request.merged == true  #github.event_name == 'push' || 
         id: plan
         run: |
           terragrunt plan
           
       - name: Terragrunt Apply
-#         if: github.event.pull_request.merged == true
-        if: github.event_name == 'push' || github.event_name == 'merge_request'
+        if: github.event.pull_request.merged == true #github.event_name == 'push' || github.event_name == 'merge_request' 
         id: apply
         run: |
-           terraform apply -auto-approve
-      
+           terraform apply
+           
       - name: Terraform destroy
         if: github.ref == 'refs/heads/main'
         run: |
-           terraform destroy -auto-approve
+           terraform destroy
   
   comment:
     runs-on: ubuntu-latest
