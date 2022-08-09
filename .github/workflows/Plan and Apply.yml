@@ -38,13 +38,13 @@ jobs:
          run: terragrunt --version
 
        - name: Terragrunt Plan
-         if: ${{ github.event_name == 'merge_request' }}
+#          if: ${{ github.event_name == 'merge_request' }}
          id: plan
          run: |
             terragrunt plan 
 
        - name: Terragrunt Apply
-         if: ${{ github.event_name == 'merge_request' }}
+#          if: ${{ github.event_name == 'merge_request' }}
          id: apply
          run: |
             terragrunt apply
