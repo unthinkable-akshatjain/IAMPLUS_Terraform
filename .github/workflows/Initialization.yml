@@ -44,17 +44,17 @@ jobs:
            pwd
            terragrunt init -input=false
            
-#       - name: Terragrunt Format
+      - name: Terragrunt Format
 #         if: ${{ github.event_name == 'merge_request' }}
-#         id: fmt
-#         run: |
-#            terragrunt fmt
+        id: fmt
+        run: |
+           terragrunt fmt
 
-#       - name: Terragrunt Validate
+      - name: Terragrunt Validate
 #         if: ${{ github.event_name == 'merge_request' }}
-#         id: validate
-#         run: |
-#            terragrunt validate
+        id: validate
+        run: |
+           terragrunt validate
            
 
 #       - name: Terragrunt Plan
